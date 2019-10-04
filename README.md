@@ -1,3 +1,3 @@
 # DATA 698
 
-Time Series Classification
+Time Series Clustering
