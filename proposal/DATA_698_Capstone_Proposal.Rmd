@@ -1,0 +1,59 @@
+---
+title: 'DATA 698: Capstone Project Proposal'
+author: "Derek G Nokes & Paul Britton"
+date: "9/11/2019"
+output: pdf_document
+bibliography: bibliography.bib
+link-citations: yes
+csl: ieee.csl
+---
+
+## Context & Motivation
+
+Despite being highly accessible for most classes of global investors, public equity markets pose some significant investment challenges. The high degree of co-movement across single stocks makes investors – particularly those following passive strategies – vulnerable to broad-based declines in equity markets. One of the simplest and most effective strategies employed by active investors to both control the risk associated with broad-based declines, and enhance performance when markets are rising, involves exploiting a well-known stylized fact of equity markets, namely that stocks that are moving strongly in a particular direction tend to continue to move in the same direction (i.e., they possess ‘momentum’).
+
+Momentum-based systematic investing systems focus on identifying stocks that are moving persistently in a particular direction and taking a position to benefit from that directional movement. The long-only version of such a strategy buys stocks that are rising most persistently and exits long positions when markets reverse. To reduce the performance volatility of such a strategy, instruments that move together can potentially be grouped and bet as though they represent a single ‘factor’. The inclusion of a broad set of diverse factors improves strategy performance. The construction of a well-diversified portfolio can thus be facilitated by the effective unsupervised learning of robust time series clusters. The use of diverse clusters in stock selection can potentially significantly reduce the volatility of a portfolio, accelerate the speed of compounding, and thereby significantly increasing long-term growth in wealth.
+
+## Hypothesis
+
+Use of a fully systematic approach to managing investments enables an investor to determine the exact responses of their strategies to any conceivable set of market conditions. Sensitivity analysis can be used to identify the set of conditions under which the system will operate within acceptable bounds. The broader the spectrum of market conditions over which a trading system can perform within acceptable performance bounds, the more robust the system.
+
+Our high-level hypothesis is that the robustness of a momentum trading strategy can be broadened, and risk-adjusted performance can be improved, through the introduction of feedback and feedforward risk controls. Feedback risk controls operate to reduce the impact of unpredictable phenomena or events on strategy performance, while feedforward controls exploit regularities in market structure to make local predictions that aid in the enhancement of strategy performance. We aim to exploit the time series characteristics of equity price returns to create momentum strategies exhibiting increased robustness and performance relative to a baseline momentum strategy. More specifically, we postulate that unsupervised learning, particularly time series clustering, can be used to design robust controls that reduce the performance volatility of our momentum strategy and increase long-term growth in wealth.
+
+## Initial Literature Review
+There exists a vast literature on the empirical characteristics of financial markets - including many comprehensive surveys - documenting extensively the basic stylized facts ([@Bollerslev1992-wg], [@Brock1996-zi], @Shephard1996-gp], [@Rao1996-ve], [@Pagan1996-gw], [@Cont2001-yx], [@Gourieroux2001-vl], [@Farmer2009-ye], and [@Marti2017-tp]). Literature exists documenting different forms of the ‘momentum’ effect ([-@Jegadeesh1993-wd], [-@Rouwenhorst1998-wn], and [-@Moskowitz2012-uy]), the time-varying and serially-dependent nature of return volatility [-@Bollerslev1992-wg], and the hierarchical structure of cross-dependence ([-@Mantegna1999-sn],[-@Tumminello2005-yk],[-@Fenn2011-yl], and [-@Caldarelli2016-iy]). A similarly broad literature also exists on the derivation of financial derivative sensitivities [-@Merton1973-cu]. To price and risk manage products with path-dependent payoffs similar to a momentum strategy, Monte Carlo simulation is often required ([-@Boyle1977-ro], [-@Broadie1996-rm], and [-@Longstaff2001-bf]). Despite the link between the analysis of systematic trading strategies and the analysis of replication strategies used to manufacture financial derivative products, little published work exists leveraging the findings in these two areas of research to the analysis of systematic trading strategies [-@Dao2016-od] and [-@Nokes2019-ea]). There is also not much literature about the design of risk controls that exploit return time series characteristics to specifically improve the performance of momentum strategies, although there is some literature documenting performance improvements resulting from the application of basic controls ([-@Barroso2015-fk], [-@Daniel2016-xo], and [-@Plessis2016-kc]). Some research indicates that exploiting the hierarchical structure known to exist in return correlations between financial instruments can improve portfolio performance as compared to classical mean-variance approaches to portfolio allocation [-@Prado2016-gp]. Finally, there is an extensive literature on different time series clustering methods ([-@Warren_Liao2005-rl], [-@Aghabozorgi2015-zh], and [-@Madiraju2018-ur]).
+
+## Solution Summary
+In this project, we intend to develop metrics that can quantify the evolution of the state of momentum, volatility, and co-movement in a particular universe of single stocks over time. We will then propose one or more associated feedback or feedforward controls that can be used to enhance the performance of a simple systematic momentum trading strategy and evaluate the performance of the strategy before and after the application of our controls using simulation (i.e., strategy backtesting and/or sensitivity analysis).
+
+## Research Question
+Our initial broad research question is as follows:
+
+Can the performance, robustness, and overall efficacy of a classical equity momentum strategy operating on the S&P1500 universe be improved through the use of a combination of feedback and feedforward controls?  Further, can any improvements be validated by means of well-controlled, causal backtesting and/or sensitivity analysis?
+
+We intend to significantly narrow our research question and eventual thesis once we have completed the first couple of weeks of research and the production of our initial research artifacts.
+
+## Research Plan
+The rough high-level research plan for this project is as follows:
+
+1. Create baseline equity momentum strategy simulator capable of grid-based parameter search and walk-forward testing. Use Dask or Numba to exploit GPUs or multiple CPUs.
+
+2. Literature review of 1) known stylized facts pertaining to equity returns, and; 2) time series clustering approaches.
+
+3. Briefly illustrate stylized facts, particularly the existence of hierarchical structure in the co-movements of stock returns. Use Random Matrix Theory (RMT) and resampling-based approaches to show statistical significance. This step may also involve diagnostic testing to demonstrate power-law scaling in return volatility and the degree distribution of different types of networks derived from return correlations. 
+
+4. Test/evaluate candidate time series clustering methods. We intend to focus on a small subset of partitioning, hierarchical, and model-based methods for our application on single stocks. We expect the research artifacts produced during this step to narrow our focus so that we can select a single approach for use in our paper.
+
+6. Adapt base strategy simulator to test feedback or feedforward control meta-strategies.
+
+7. Evaluate the significance of performance differences between control-enhanced strategies and the base strategy using backtesting and/or sensitivities.
+
+## Data Sources
+To perform the proposed analysis briefly outlined in this proposal, we require a list of the past and current constituents of the S&P1500 index, along with corresponding business summary, sector, sub-industry, and price data. This data has been acquired from Norgate and is available through a Python API. Although alternative open data sources exist, they are significantly less complete and accurate, and would lead to significant survivorship bias in our simulation results.  Instead, we propose normalizing/anonymizing our data in such a way as to adhere to our data license to ensure the reproducibility of our project from our public repository.
+
+## Scope
+Despite the significant scope of this proposed work, both of our group members have considerable experience in this area and also worked together professionally on related problems for nearly 9 years. Derek has published one journal article illustrating how sensitivities can be computed using Monte Carlo techniques and employed in the evaluation of systematic trading strategies [@Nokes2019-ea].
+
+## References
+
+
