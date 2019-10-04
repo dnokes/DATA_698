@@ -1,0 +1,19 @@
+---
+title: 'DATA 698: Capstone Literature Review'
+author: "Derek G Nokes & Paul Britton"
+date: "9/11/2019"
+output:
+  word_document: default
+  pdf_document: default
+link-citations: yes
+csl: ieee.csl
+bibliography: bibliography.bib
+---
+
+
+## Initial Literature Review
+There exists a vast literature on the empirical characteristics of financial markets - including many comprehensive surveys - documenting extensively the basic stylized facts ([@Bollerslev1992-wg], [@Brock1996-zi], @Shephard1996-gp], [@Rao1996-ve], [@Pagan1996-gw], [@Cont2001-yx], [@Gourieroux2001-vl], [@Farmer2009-ye], and [@Marti2017-tp]). Literature exists documenting different forms of the ‘momentum’ effect ([-@Jegadeesh1993-wd], [-@Rouwenhorst1998-wn], and [-@Moskowitz2012-uy]), the time-varying and serially-dependent nature of return volatility [-@Bollerslev1992-wg], and the hierarchical structure of cross-dependence ([-@Mantegna1999-sn],[-@Tumminello2005-yk],[-@Fenn2011-yl], and [-@Caldarelli2016-iy]). A similarly broad literature also exists on the derivation of financial derivative sensitivities [-@Merton1973-cu]. To price and risk manage products with path-dependent payoffs similar to a momentum strategy, Monte Carlo simulation is often required ([-@Boyle1977-ro], [-@Broadie1996-rm], and [-@Longstaff2001-bf]). Despite the link between the analysis of systematic trading strategies and the analysis of replication strategies used to manufacture financial derivative products, little published work exists leveraging the findings in these two areas of research to the analysis of systematic trading strategies [-@Dao2016-od] and [-@Nokes2019-ea]). There is also not much literature about the design of risk controls that exploit return time series characteristics to specifically improve the performance of momentum strategies, although there is some literature documenting performance improvements resulting from the application of basic controls ([-@Barroso2015-fk], [-@Daniel2016-xo], and [-@Plessis2016-kc]). Some research indicates that exploiting the hierarchical structure known to exist in return correlations between financial instruments can improve portfolio performance as compared to classical mean-variance approaches to portfolio allocation [-@Prado2016-gp]. Finally, there is an extensive literature on different time series clustering methods ([-@Warren_Liao2005-rl], [-@Aghabozorgi2015-zh], and [-@Madiraju2018-ur]).
+
+## References
+
+
